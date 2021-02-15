@@ -112,6 +112,8 @@ function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
   setStatusClass(document.body, correct)
+  if(correct) soundCorrect.play()
+  else soundIncorrect.play()
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
@@ -163,6 +165,8 @@ const audioW = new Audio("mp3/audioW.mp3")
 const audioX = new Audio("mp3/audioX.mp3")
 const audioY = new Audio("mp3/audioY.mp3")
 const audioZ = new Audio("mp3/audioZ.mp3")
+const soundCorrect = new Audio("mp3/sound_correct.mp3")
+const soundIncorrect = new Audio("mp3/sound_incorrect.mp3")
 
 function playA() {audioA.play()}
 function playB() {audioB.play()}

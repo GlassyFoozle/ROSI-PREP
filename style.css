@@ -1,6 +1,5 @@
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: 'Nanum Gothic', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -12,6 +11,7 @@
 }
 
 body {
+  font-family: 'Nanum Gothic', sans-serif;
   --hue: var(--hue-normal);
   padding: 0;
   margin: 0;

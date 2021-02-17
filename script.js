@@ -167,6 +167,7 @@ const audioY = new Audio("mp3/audioY.mp3")
 const audioZ = new Audio("mp3/audioZ.mp3")
 const soundCorrect = new Audio("mp3/sound_correct.mp3")
 const soundIncorrect = new Audio("mp3/sound_incorrect.mp3")
+soundIncorrect.volume = 0.3
 
 function playA() {audioA.play()}
 function playB() {audioB.play()}

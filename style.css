@@ -1,7 +1,7 @@
 *, *::before, *::after {
   box-sizing: border-box;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 :root {
@@ -31,6 +31,14 @@ body.wrong {
   --hue: var(--hue-wrong);
 }
 
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
 .container {
   width: 40rem;
   max-width: 80%;
@@ -41,9 +49,37 @@ body.wrong {
   box-shadow: 0 0 0.5rem 0.1rem;
 }
 
-.btn-grid {
+.alphabet-grid-container {
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  gap: 0.55rem;
+  margin: 1.1rem 0;
+}
+
+.alphabet-grid-item {
+  text-align: center;
+  border: 0.15rem solid hsl(var(--hue-normal), 100%, 30%);
+  color: white;
+  background-color: hsl(var(--hue-normal), 100%, 50%);
+}
+
+.btn-grid-menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
+  gap: 0.55rem;
+  margin: 1.1rem 0;
+}
+
+.btn-grid1 {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0.55rem;
+  margin: 1.1rem 0;
+}
+
+.btn-grid2 {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
   gap: 0.55rem;
   margin: 1.1rem 0;
 }

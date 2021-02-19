@@ -1,3 +1,4 @@
+const heading = document.getElementById('heading')
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const soundButton = document.getElementById('sound-btn')
@@ -18,6 +19,7 @@ nextButton.addEventListener('click', () => {
 
 function startQuiz() {
   startButton.classList.add('hide') //hide start button
+  heading.classList.add('hide') //hide heading
   shuffledQuestions = questions.sort(() => Math.random() - 0.5)
   questionContainer.classList.remove('hide') //show question container
   setNextQuestion()
@@ -31,7 +33,6 @@ function setNextQuestion() {
 function showQuestion(Q) {
   questionElement.innerText = Q.question;
   currentAType = Q.aType
-  console.log(currentAType)
   if (currentAType == 1) {soundButton.addEventListener('click', playA);playA()}
   if (currentAType == 2) {soundButton.addEventListener('click', playB);playB()}
   if (currentAType == 3) {soundButton.addEventListener('click', playC);playC()}
@@ -79,7 +80,6 @@ function resetState() {
   while(answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
-  console.log(currentAType)
   if (currentAType == 1) soundButton.removeEventListener('click', playA)
   if (currentAType == 2) soundButton.removeEventListener('click', playB)
   if (currentAType == 3) soundButton.removeEventListener('click', playC)

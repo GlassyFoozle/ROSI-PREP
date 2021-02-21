@@ -165,7 +165,7 @@ const answerList = [ //list of available answers, capitalized alphabets in this 
   }
 ]
 
-let shuffledAnswerList, shuffledChoiceList, choiceList = []
+let shuffledAnswerList, choiceList = []
 let currentQuestionIndex = 0
 
 startButton.addEventListener('click', startQuiz)
@@ -204,16 +204,14 @@ function showQuestion(Q) {
   }
   choiceList.push(answerList[correctAnswer-1])
   choiceList[4].correct = true
-  shuffledChoiceList = choiceList.sort(() => Math.random() - 0.5)
-
-  shuffledChoiceList.forEach(choice => {
+  shuffle(choiceList)
+  choiceList.forEach(choice => {
     const button = document.createElement('button')
     button.innerText = choice.letter
     button.classList.add('btn')
     if(choice.correct){
       button.dataset.correct = choice.correct
     }
-
     button.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(button)
   })

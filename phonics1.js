@@ -143,6 +143,7 @@ let currentQuestionIndex = 0
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
   answerList[shuffledQuestions[currentQuestionIndex]-1].correct = false
+  soundButton.removeEventListener('click', playAudio[shuffledQuestions[currentQuestionIndex]-1])
   currentQuestionIndex++
   setNextQuestion()
 })
@@ -163,7 +164,7 @@ function setNextQuestion() {
 }
 
 function showQuestion(Q) {
-  soundButton.addEventListener('click', playAudio[Q-1]());playAudio[Q-1]()
+  soundButton.addEventListener('click', playAudio[Q-1]);playAudio[Q-1]()
   shuffledAnswerList = JSON.parse(JSON.stringify(answerList))
   shuffle(shuffledAnswerList)
   for(let i=0, j=0;j < 3;i++) {
@@ -212,6 +213,7 @@ function selectAnswer(e) {
     nextButton.classList.remove('hide')
   } else {
     answerList[shuffledQuestions[currentQuestionIndex]-1].correct = false
+    soundButton.removeEventListener('click', playAudio[shuffledQuestions[currentQuestionIndex]-1])
     startButton.innerText = '다시 하기'
     startButton.classList.remove('hide')
   }
@@ -239,32 +241,32 @@ function shuffle(array) {
 }
 
 const audio = [
-  new Audio("mp3/audioA.mp3"),
-  new Audio("mp3/audioB.mp3"),
-  new Audio("mp3/audioC.mp3"),
-  new Audio("mp3/audioD.mp3"),
-  new Audio("mp3/audioE.mp3"),
-  new Audio("mp3/audioF.mp3"),
-  new Audio("mp3/audioG.mp3"),
-  new Audio("mp3/audioH.mp3"),
-  new Audio("mp3/audioI.mp3"),
-  new Audio("mp3/audioJ.mp3"),
-  new Audio("mp3/audioK.mp3"),
-  new Audio("mp3/audioL.mp3"),
-  new Audio("mp3/audioM.mp3"),
-  new Audio("mp3/audioN.mp3"),
-  new Audio("mp3/audioO.mp3"),
-  new Audio("mp3/audioP.mp3"),
-  new Audio("mp3/audioQ.mp3"),
-  new Audio("mp3/audioR.mp3"),
-  new Audio("mp3/audioS.mp3"),
-  new Audio("mp3/audioT.mp3"),
-  new Audio("mp3/audioU.mp3"),
-  new Audio("mp3/audioV.mp3"),
-  new Audio("mp3/audioW.mp3"),
-  new Audio("mp3/audioX.mp3"),
-  new Audio("mp3/audioY.mp3"),
-  new Audio("mp3/audioZ.mp3")
+  new Audio("mp3/phonics1/audioA.mp3"),
+  new Audio("mp3/phonics1/audioB.mp3"),
+  new Audio("mp3/phonics1/audioC.mp3"),
+  new Audio("mp3/phonics1/audioD.mp3"),
+  new Audio("mp3/phonics1/audioE.mp3"),
+  new Audio("mp3/phonics1/audioF.mp3"),
+  new Audio("mp3/phonics1/audioG.mp3"),
+  new Audio("mp3/phonics1/audioH.mp3"),
+  new Audio("mp3/phonics1/audioI.mp3"),
+  new Audio("mp3/phonics1/audioJ.mp3"),
+  new Audio("mp3/phonics1/audioK.mp3"),
+  new Audio("mp3/phonics1/audioL.mp3"),
+  new Audio("mp3/phonics1/audioM.mp3"),
+  new Audio("mp3/phonics1/audioN.mp3"),
+  new Audio("mp3/phonics1/audioO.mp3"),
+  new Audio("mp3/phonics1/audioP.mp3"),
+  new Audio("mp3/phonics1/audioQ.mp3"),
+  new Audio("mp3/phonics1/audioR.mp3"),
+  new Audio("mp3/phonics1/audioS.mp3"),
+  new Audio("mp3/phonics1/audioT.mp3"),
+  new Audio("mp3/phonics1/audioU.mp3"),
+  new Audio("mp3/phonics1/audioV.mp3"),
+  new Audio("mp3/phonics1/audioW.mp3"),
+  new Audio("mp3/phonics1/audioX.mp3"),
+  new Audio("mp3/phonics1/audioY.mp3"),
+  new Audio("mp3/phonics1/audioZ.mp3")
 ]
 const soundCorrect = new Audio("mp3/sound_correct.mp3")
 const soundIncorrect = new Audio("mp3/sound_incorrect.mp3")

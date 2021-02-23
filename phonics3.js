@@ -4,152 +4,21 @@ const nextButton = document.getElementById('next-btn')
 const soundButton = document.getElementById('sound-btn')
 const questionContainer = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
-const answerList = [ //list of available answers, capitalized alphabets in this case.
-  {
-    answerid: 1,
-    letter: 'A',
-    correct: false
-  },
-  {
-    answerid: 2,
-    letter: 'B',
-    correct: false
-  },
-  {
-    answerid: 3,
-    letter: 'C',
-    correct: false
-  },
-  {
-    answerid: 4,
-    letter: 'D',
-    correct: false
-  },
-  {
-    answerid: 5,
-    letter: 'E',
-    correct: false
-  },
-  {
-    answerid: 6,
-    letter: 'F',
-    correct: false
-  },
-  {
-    answerid: 7,
-    letter: 'G',
-    correct: false
-  },
-  {
-    answerid: 8,
-    letter: 'H',
-    correct: false
-  },
-  {
-    answerid: 9,
-    letter: 'I',
-    correct: false
-  },
-  {
-    answerid: 10,
-    letter: 'J',
-    correct: false
-  },
-  {
-    answerid: 11,
-    letter: 'K',
-    correct: false
-  },
-  {
-    answerid: 12,
-    letter: 'L',
-    correct: false
-  },
-  {
-    answerid: 13,
-    letter: 'M',
-    correct: false
-  },
-  {
-    answerid: 14,
-    letter: 'N',
-    correct: false
-  },
-  {
-    answerid: 15,
-    letter: 'O',
-    correct: false
-  },
-  {
-    answerid: 16,
-    letter: 'P',
-    correct: false
-  },
-  {
-    answerid: 17,
-    letter: 'Q',
-    correct: false
-  },
-  {
-    answerid: 18,
-    letter: 'R',
-    correct: false
-  },
-  {
-    answerid: 19,
-    letter: 'S',
-    correct: false
-  },
-  {
-    answerid: 20,
-    letter: 'T',
-    correct: false
-  },
-  {
-    answerid: 21,
-    letter: 'U',
-    correct: false
-  },
-  {
-    answerid: 22,
-    letter: 'V',
-    correct: false
-  },
-  {
-    answerid: 23,
-    letter: 'W',
-    correct: false
-  },
-  {
-    answerid: 24,
-    letter: 'X',
-    correct: false
-  },
-  {
-    answerid: 25,
-    letter: 'Y',
-    correct: false
-  },
-  {
-    answerid: 26,
-    letter: 'Z',
-    correct: false
-  }
-]
-let shuffledQuestions, shuffledAnswerList, choiceList = [] 
+const textInput = document.getElementById('text-input')
+const submitButton = document.getElementById('submit-btn')
+
+let shuffledQuestions
 let currentQuestionIndex = 0
 
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
-  answerList[shuffledQuestions[currentQuestionIndex].answer-1].correct = false
   soundButton.removeEventListener('click', playAudio[shuffledQuestions[currentQuestionIndex].audioIndex])
   currentQuestionIndex++
   setNextQuestion()
 })
+submitButton.addEventListener('click', submitAnswer)
 
 function startQuiz() {
-  choiceList = []
   currentQuestionIndex = 0
   startButton.classList.add('hide') //hide start button
   heading.classList.add('hide') //hide heading
@@ -157,6 +26,7 @@ function startQuiz() {
   questionContainer.classList.remove('hide') //show question container
   setNextQuestion()
 }
+
 function setNextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
@@ -164,58 +34,37 @@ function setNextQuestion() {
 
 function showQuestion(Q) {
   soundButton.addEventListener('click', playAudio[Q.audioIndex]);playAudio[Q.audioIndex]()
-  shuffledAnswerList = JSON.parse(JSON.stringify(answerList))
-  shuffle(shuffledAnswerList)
-  for(let i=0, j=0;j < 4;i++) {
-    if(shuffledAnswerList[i].answerid != Q.answer){
-      choiceList.push(shuffledAnswerList[i])
-      j++
+}
+
+function submitAnswer() {
+  let correct
+  let currentQuestion = shuffledQuestions[currentQuestionIndex]
+  if(textInput.value == ''){
+    alert("답을 입력해주세요.")
+  } else {
+    if(textInput.value.toLowerCase() == currentQuestion.answer){
+      correct = true
+      soundCorrect.play()
     } else {
-      //do nothing
+      correct=false
+      soundIncorrect.play()
+    }
+    setStatusClass(document.body, correct)
+    
+    if(questions.length > currentQuestionIndex + 1){
+      nextButton.classList.remove('hide')
+    } else {
+      soundButton.removeEventListener('click', playAudio[shuffledQuestions[currentQuestionIndex].audioIndex])
+      startButton.innerText = '다시 하기'
+      startButton.classList.remove('hide')
     }
   }
-  choiceList.push(answerList[Q.answer-1])
-  choiceList[4].correct = true
-  shuffle(choiceList)
-  choiceList.forEach(choice => {
-    const button = document.createElement('button')
-    button.innerText = choice.letter
-    button.classList.add('btn')
-    if(choice.correct){
-      button.dataset.correct = choice.correct
-    }
-
-    button.addEventListener('click', selectAnswer)
-    answerButtonsElement.appendChild(button)
-  })
 }
 
 function resetState() {
-  choiceList = []
   clearStatusClass(document.body)
   nextButton.classList.add('hide')
-  while(answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-  }
-}
-
-function selectAnswer(e) {
-  const selectedButton = e.target
-  const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
-  if(correct) soundCorrect.play()
-  else soundIncorrect.play()
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
-  if(questions.length > currentQuestionIndex + 1){
-    nextButton.classList.remove('hide')
-  } else {
-    answerList[shuffledQuestions[currentQuestionIndex].answer-1].correct = false
-    soundButton.removeEventListener('click', playAudio[shuffledQuestions[currentQuestionIndex].audioIndex])
-    startButton.innerText = '다시 하기'
-    startButton.classList.remove('hide')
-  }
+  textInput.value = ''
 }
 
 function setStatusClass(element, correct) {
@@ -230,13 +79,6 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
-}
-
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-  }
 }
 
 const audio = [
@@ -318,77 +160,77 @@ const questions = [
   { //alligator
     audioIndex: 0,
     letters: 9,
-    answer: 1
+    answer: 'alligator'
   },
   { //banch
     audioIndex: 1,
     letters: 5,
-    answer: 2
+    answer: 'banch'
   },
   { //bench
     audioIndex: 2,
     letters: 5,
-    answer: 2
+    answer: 'bench'
   },
   { //bicycle
     audioIndex: 3,
     letters: 7,
-    answer: 2
+    answer: 'bicycle'
   },
   { //black
     audioIndex: 4,
     letters: 5,
-    answer: 2
+    answer: 'black'
   },
   { //blade
     audioIndex: 5,
     letters: 5,
-    answer: 2
+    answer: 'blade'
   },
   { //blame
     audioIndex: 6,
     letters: 5,
-    answer: 2
+    answer: 'blame'
   },
   { //branch
     audioIndex: 7,
     letters: 6,
-    answer: 2
+    answer: 'branch'
   },
   { //brick
     audioIndex: 8,
     letters: 5,
-    answer: 2
+    answer: 'brick'
   },
   {
     audioIndex: 9,
     letters: 5,
-    answer: 2
+    answer: 'bride'
   },
   { //brush
     audioIndex: 10,
     letters: 5,
-    answer: 2
+    answer: 'brush'
   },
   {
     audioIndex: 11,
     letters: 4,
-    answer: 3
+    answer: 'cage'
   },
   { //candy
     audioIndex: 12,
     letters: 5,
-    answer: 3
+    answer: 'candy'
   },
   {
     audioIndex: 13,
     letters: 4,
-    answer: 3
+    answer: 'chin'
   },
   {
     audioIndex: 14,
     letters: 4,
-    answer: 3
+    answer: 'chip'
   },
   {
     audioIndex: 15,

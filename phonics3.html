@@ -14,15 +14,14 @@
 </head>
 <body>
   <div class="container">
-    <h1 id="heading">Phonics 3 Quiz - 단어듣고 첫 자음 맞히기 (consonant blends)</h1>
+    <h1 id="heading">Phonics 3 Quiz - 단어듣고 받아쓰기 (consonant blends)</h1>
     <div id="question-container" class="hide">
-      <div id="question">단어를 듣고 단어의 첫 자음을 고르세요.</div>
+      <div id="letter-container"></div>
+      <div id="question">단어를 듣고 입력창에 단어를 쓰세요.</div>
       <button id="sound-btn" class="sound-btn btn"><i class="fas fa-headphones"></i> 듣기</button>
-      <div id="answer-buttons" class="btn-grid2">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-        <button class="btn">Answer 4</button>
+      <div id="text-container">
+        <input id="text-input" type="text" placeholder="단어를 입력하세요">
+        <button id="submit-btn" class="btn">확인</button>
       </div>
     </div>
     <div class="controls">

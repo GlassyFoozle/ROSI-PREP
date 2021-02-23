@@ -370,7 +370,7 @@ const questions = [
   {
     audioIndex: 42,
     letters: 4,
-    answer: plan
+    answer: 'plan'
   },
   {
     audioIndex: 43,

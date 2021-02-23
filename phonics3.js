@@ -235,142 +235,142 @@ const questions = [
   {
     audioIndex: 15,
     letters: 4,
-    answer: 3
+    answer: 'chop'
   },
   {
     audioIndex: 16,
     letters: 4,
-    answer: 3
+    answer: 'city'
   },
   {
     audioIndex: 17,
     letters: 4,
-    answer: 3
+    answer: 'clap'
   },
   { //cliff
     audioIndex: 18,
     letters: 5,
-    answer: 3
+    answer: 'cliff'
   },
   {
     audioIndex: 19,
     letters: 4,
-    answer: 3
+    answer: 'cold'
   },
   {
     audioIndex: 20,
     letters: 4,
-    answer: 3
+    answer: 'crab'
   },
   { //crime
     audioIndex: 21,
     letters: 5,
-    answer: 3
+    answer: 'crime'
   },
   {
     audioIndex: 22,
     letters: 5,
-    answer: 3
+    answer: 'cross'
   },
   { //cut
     audioIndex: 23,
     letters: 3,
-    answer: 3
+    answer: 'cut'
   },
   { //drab
     audioIndex: 24,
     letters: 4,
-    answer: 4
+    answer: 'drab'
   },
   {
     audioIndex: 25,
     letters: 5,
-    answer: 4
+    answer: 'dress'
   },
   { //drum
     audioIndex: 26,
     letters: 4,
-    answer: 4
+    answer: 'drum'
   },
   { //face
     audioIndex: 27,
     letters: 4,
-    answer: 6
+    answer: 'face'
   },
   { //fish
     audioIndex: 28,
     letters: 4,
-    answer: 6
+    answer: 'fish'
   },
   { //flag
     audioIndex: 29,
     letters: 4,
-    answer: 6
+    answer: 'flag'
   },
   { //frame
     audioIndex: 30,
     letters: 5,
-    answer: 6
+    answer: 'frame'
   },
   { //frog
     audioIndex: 31,
     letters: 4,
-    answer: 6
+    answer: 'frog'
   },
   { //from
     audioIndex: 32,
     letters: 4,
-    answer: 6
+    answer: 'from'
   },
   { //giraffe
     audioIndex: 33,
     letters: 7,
-    answer: 7
+    answer: 'giraffe'
   },
   {
     audioIndex: 34,
     letters: 5,
-    answer: 7
+    answer: 'glass'
   },
   {
     audioIndex: 35,
     letters: 5,
-    answer: 7
+    answer: 'globe'
   },
   {
     audioIndex: 36,
     letters: 4,
-    answer: 7
+    answer: 'gold'
   },
   {
     audioIndex: 37,
     letters: 5,
-    answer: 7
+    answer: 'grape'
   },
   {
     audioIndex: 38,
     letters: 5,
-    answer: 7
+    answer: 'grass'
   },
   {
     audioIndex: 39,
     letters: 3,
-    answer: 7
+    answer: 'gum'
   },
   {
     audioIndex: 40,
     letters: 3,
-    answer: 7
+    answer: 'gym'
   },
   {
     audioIndex: 41,
     letters: 5,
-    answer: 12
+    answer: 'lunch'
   },
   {
     audioIndex: 42,
     letters: 4,
-    answer: 16
+    answer: plan
   },
   {
     audioIndex: 43,
@@ -390,27 +390,27 @@ const questions = [
   { //slave
     audioIndex: 46,
     letters: 5,
-    answer: 19
+    answer: 'slave'
   },
   { //sled
     audioIndex: 47,
     letters: 4,
-    answer: 19
+    answer: 'sled'
   },
   { //slid
     audioIndex: 48,
     letters: 4,
-    answer: 19
+    answer: 'slid'
   },
   { //slide
     audioIndex: 49,
     letters: 5,
-    answer: 19
+    answer: 'slide'
   },
   { //slime
     audioIndex: 50,
     letters: 5,
-    answer: 19
+    answer: 'slime'
   },
   {  
     audioIndex: 51,
@@ -440,7 +440,7 @@ const questions = [
   { //spin
     audioIndex: 56,
     letters: 4,
-    answer: 19
+    answer: 'spin'
   },
   {
     audioIndex: 57,

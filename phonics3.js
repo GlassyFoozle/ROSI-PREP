@@ -3,6 +3,7 @@ const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const soundButton = document.getElementById('sound-btn')
 const questionContainer = document.getElementById('question-container')
+const letterContainer = document.getElementById('letter-container')
 const questionElement = document.getElementById('question')
 const textInput = document.getElementById('text-input')
 const submitButton = document.getElementById('submit-btn')
@@ -34,6 +35,9 @@ function setNextQuestion() {
 
 function showQuestion(Q) {
   soundButton.addEventListener('click', playAudio[Q.audioIndex]);playAudio[Q.audioIndex]()
+  for(let i=0;i<Q.letters;i++){
+    letterContainer.innerHTML += 'ㅡ '
+  }
 }
 
 function submitAnswer() {
@@ -65,6 +69,7 @@ function resetState() {
   clearStatusClass(document.body)
   nextButton.classList.add('hide')
   textInput.value = ''
+  letterContainer.innerHTML = '글자 수: '
 }
 
 function setStatusClass(element, correct) {
@@ -375,17 +380,17 @@ const questions = [
   {
     audioIndex: 43,
     letters: 5,
-    answer: 19
+    answer: 'shape'
   },
   {
     audioIndex: 44,
     letters: 4,
-    answer: 19
+    answer: 'ship'
   },
   {
     audioIndex: 45,
     letters: 4,
-    answer: 19
+    answer: 'shop'
   },
   { //slave
     audioIndex: 46,
@@ -415,27 +420,27 @@ const questions = [
   {  
     audioIndex: 51,
     letters: 5,
-    answer: 19
+    answer: 'smell'
   },
   {
     audioIndex: 52,
     letters: 5,
-    answer: 19
+    answer: 'smile'
   },
   {
     audioIndex: 53,
     letters: 5,
-    answer: 19
+    answer: 'snack'
   },
   {
     audioIndex: 54,
     letters: 5,
-    answer: 19
+    answer: 'snake'
   },
   {
     audioIndex: 55,
     letters: 5,
-    answer: 19
+    answer: 'spade'
   },
   { //spin
     audioIndex: 56,
@@ -445,36 +450,36 @@ const questions = [
   {
     audioIndex: 57,
     letters: 5,
-    answer: 19
+    answer: 'spine'
   },
   {
     audioIndex: 58,
     letters: 5,
-    answer: 19
+    answer: 'stone'
   },
   {
     audioIndex: 59,
     letters: 5,
-    answer: 19
+    answer: 'stove'
   },
   {
     audioIndex: 60,
     letters: 4,
-    answer: 19
+    answer: 'swim'
   },
   {
     audioIndex: 61,
     letters: 5,
-    answer: 19
+    answer: 'swing'
   },
   {
     audioIndex: 62,
     letters: 4,
-    answer: 23
+    answer: 'wash'
   },
   {
     audioIndex: 63,
     letters: 4,
-    answer: 23
+    answer: 'wine'
   }
 ]

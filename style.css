@@ -63,6 +63,12 @@ h1 {
   background-color: hsl(var(--hue-normal), 100%, 50%);
 }
 
+.alphabet-grid-item-empty {
+  text-align: center;
+  color: white;
+  border: 0.15rem solid hsl(var(--hue-normal), 100%, 30%);
+}
+
 .btn-grid-menu {
   display: grid;
   grid-template-columns: repeat(2, auto);

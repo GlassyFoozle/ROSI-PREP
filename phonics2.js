@@ -181,7 +181,7 @@ function startQuiz() {
   for(let i=0;i<26;i++) {
     alphabetGridElements[i].classList.add('hide')
     let emptyItem = document.createElement('div')
-    emptyItem.innerHTML= '?'
+    emptyItem.innerHTML= i+1
     emptyItem.classList.add('alphabet-grid-item-empty')
     alphabetGrid.appendChild(emptyItem)
   }
@@ -244,7 +244,7 @@ function selectAnswer(e) {
     setStatusClass(button, button.dataset.correct)
   })
   alphabetGridElements[currentQuestionIndex].classList.remove('hide')
-  alphabetGrid.removeChild(alphabetGrid.lastChild)
+  alphabetGrid.removeChild(alphabetGrid.children[26])
   if(questions.length > currentQuestionIndex + 1){
     nextButton.classList.remove('hide')
   } else {

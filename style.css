@@ -65,7 +65,7 @@ h1 {
 
 .btn-grid-menu {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(2, auto);
   gap: 0.55rem;
   margin: 1.1rem 0;
 }

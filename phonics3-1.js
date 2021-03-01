@@ -269,8 +269,9 @@ const audio = [
   new Audio("mp3/phonics3-1/yuk.mp3"),
   new Audio("mp3/phonics3-1/yum.mp3"),
   new Audio("mp3/phonics3-1/zap.mp3"),
-  new Audio("mp3/phonics3-1/zeb.mp3"),
-  new Audio("mp3/phonics3-1/zip.mp3")
+  new Audio("mp3/phonics3-1/zen.mp3"),
+  new Audio("mp3/phonics3-1/zip.mp3"),
+  new Audio("mp3/phonics3-1/med.mp3")
 ]
 const soundCorrect = new Audio("mp3/sound_correct.mp3")
 const soundIncorrect = new Audio("mp3/sound_incorrect.mp3")
@@ -1036,10 +1037,14 @@ const questions = [
   },
   {
     audioIndex: 188,
-    answer: 'zeb'
+    answer: 'zen'
   },
   {
     audioIndex: 189,
     answer: 'zip'
+  },
+  {
+    audioIndex: 190,
+    answer: 'med'
   }
 ]

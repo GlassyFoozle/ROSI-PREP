@@ -85,7 +85,7 @@ const audio = [
   new Audio("mp3/phonics3-2/bane.mp3"),
   new Audio("mp3/phonics3-2/bite.mp3"),
   new Audio("mp3/phonics3-2/bone.mp3"),
-  new Audio("mp3/phonics3-2/bune.mp3"),
+  new Audio("mp3/phonics3-2/fume.mp3"),
   new Audio("mp3/phonics3-2/cabe.mp3"),
   new Audio("mp3/phonics3-2/cape.mp3"),
   new Audio("mp3/phonics3-2/cope.mp3"),
@@ -109,17 +109,17 @@ const audio = [
   new Audio("mp3/phonics3-2/lipe.mp3"),
   new Audio("mp3/phonics3-2/mape.mp3"),
   new Audio("mp3/phonics3-2/mate.mp3"),
-  new Audio("mp3/phonics3-2/mome.mp3"),
+  new Audio("mp3/phonics3-2/mule.mp3"),
   new Audio("mp3/phonics3-2/mone.mp3"),
   new Audio("mp3/phonics3-2/mune.mp3"),
   new Audio("mp3/phonics3-2/mute.mp3"),
   new Audio("mp3/phonics3-2/nade.mp3"),
   new Audio("mp3/phonics3-2/nape.mp3"),
   new Audio("mp3/phonics3-2/node.mp3"),
-  new Audio("mp3/phonics3-2/nune.mp3"),
-  new Audio("mp3/phonics3-2/nute.mp3"),
+  new Audio("mp3/phonics3-2/tune.mp3"),
+  new Audio("mp3/phonics3-2/duke.mp3"),
   new Audio("mp3/phonics3-2/pane.mp3"),
-  new Audio("mp3/phonics3-2/pite.mp3"),
+  new Audio("mp3/phonics3-2/june.mp3"),
   new Audio("mp3/phonics3-2/pope.mp3"),
   new Audio("mp3/phonics3-2/rake.mp3"),
   new Audio("mp3/phonics3-2/rane.mp3"),
@@ -130,10 +130,12 @@ const audio = [
   new Audio("mp3/phonics3-2/rote.mp3"),
   new Audio("mp3/phonics3-2/rune.mp3"),
   new Audio("mp3/phonics3-2/sade.mp3"),
-  new Audio("mp3/phonics3-2/tabe.mp3"),
+  new Audio("mp3/phonics3-2/lane.mp3"),
   new Audio("mp3/phonics3-2/tape.mp3"),
   new Audio("mp3/phonics3-2/tine.mp3"),
-  new Audio("mp3/phonics3-2/tube.mp3")
+  new Audio("mp3/phonics3-2/tube.mp3"),
+  new Audio("mp3/phonics3-2/line.mp3"),
+  new Audio("mp3/phonics3-2/date.mp3")
 ]
 const soundCorrect = new Audio("mp3/sound_correct.mp3")
 const soundIncorrect = new Audio("mp3/sound_incorrect.mp3")
@@ -159,7 +161,7 @@ const questions = [
   },
   {
     audioIndex: 3,
-    answer: 'bune'
+    answer: 'fume'
   },
   {
     audioIndex: 4,
@@ -255,7 +257,7 @@ const questions = [
   },
   {
     audioIndex: 27,
-    answer: 'mome'
+    answer: 'mule'
   },
   {
     audioIndex: 28,
@@ -283,11 +285,11 @@ const questions = [
   },
   {
     audioIndex: 34,
-    answer: 'nune'
+    answer: 'tune'
   },
   {
     audioIndex: 35,
-    answer: 'nute'
+    answer: 'duke'
   },
   {
     audioIndex: 36,
@@ -295,7 +297,7 @@ const questions = [
   },
   {
     audioIndex: 37,
-    answer: 'pite'
+    answer: 'june'
   },
   {
     audioIndex: 38,
@@ -339,7 +341,7 @@ const questions = [
   },
   {
     audioIndex: 48,
-    answer: 'tabe'
+    answer: 'lane'
   },
   {
     audioIndex: 49,
@@ -352,5 +354,13 @@ const questions = [
   {
     audioIndex: 51,
     answer: 'tube'
+  },
+  {
+    audioIndex: 52,
+    answer: 'line'
+  },
+  {
+    audioIndex: 53,
+    answer: 'date'
   }
 ]

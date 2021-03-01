@@ -8,132 +8,132 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 const answerList = [ //list of available answers, capitalized alphabets in this case.
   {
     answerid: 1,
-    letter: 'A',
+    letter: 'a',
     correct: false
   },
   {
     answerid: 2,
-    letter: 'B',
+    letter: 'b',
     correct: false
   },
   {
     answerid: 3,
-    letter: 'C',
+    letter: 'c',
     correct: false
   },
   {
     answerid: 4,
-    letter: 'D',
+    letter: 'd',
     correct: false
   },
   {
     answerid: 5,
-    letter: 'E',
+    letter: 'e',
     correct: false
   },
   {
     answerid: 6,
-    letter: 'F',
+    letter: 'f',
     correct: false
   },
   {
     answerid: 7,
-    letter: 'G',
+    letter: 'g',
     correct: false
   },
   {
     answerid: 8,
-    letter: 'H',
+    letter: 'h',
     correct: false
   },
   {
     answerid: 9,
-    letter: 'I',
+    letter: 'i',
     correct: false
   },
   {
     answerid: 10,
-    letter: 'J',
+    letter: 'j',
     correct: false
   },
   {
     answerid: 11,
-    letter: 'K',
+    letter: 'k',
     correct: false
   },
   {
     answerid: 12,
-    letter: 'L',
+    letter: 'l',
     correct: false
   },
   {
     answerid: 13,
-    letter: 'M',
+    letter: 'm',
     correct: false
   },
   {
     answerid: 14,
-    letter: 'N',
+    letter: 'n',
     correct: false
   },
   {
     answerid: 15,
-    letter: 'O',
+    letter: 'o',
     correct: false
   },
   {
     answerid: 16,
-    letter: 'P',
+    letter: 'p',
     correct: false
   },
   {
     answerid: 17,
-    letter: 'Q',
+    letter: 'q',
     correct: false
   },
   {
     answerid: 18,
-    letter: 'R',
+    letter: 'r',
     correct: false
   },
   {
     answerid: 19,
-    letter: 'S',
+    letter: 's',
     correct: false
   },
   {
     answerid: 20,
-    letter: 'T',
+    letter: 't',
     correct: false
   },
   {
     answerid: 21,
-    letter: 'U',
+    letter: 'u',
     correct: false
   },
   {
     answerid: 22,
-    letter: 'V',
+    letter: 'v',
     correct: false
   },
   {
     answerid: 23,
-    letter: 'W',
+    letter: 'w',
     correct: false
   },
   {
     answerid: 24,
-    letter: 'X',
+    letter: 'x',
     correct: false
   },
   {
     answerid: 25,
-    letter: 'Y',
+    letter: 'y',
     correct: false
   },
   {
     answerid: 26,
-    letter: 'Z',
+    letter: 'z',
     correct: false
   }
 ]
@@ -241,32 +241,32 @@ function shuffle(array) {
 }
 
 const audio = [
-  new Audio("mp3/phonics1/audioA.mp3"),
-  new Audio("mp3/phonics1/audioB.mp3"),
-  new Audio("mp3/phonics1/audioC.mp3"),
-  new Audio("mp3/phonics1/audioD.mp3"),
-  new Audio("mp3/phonics1/audioE.mp3"),
-  new Audio("mp3/phonics1/audioF.mp3"),
-  new Audio("mp3/phonics1/audioG.mp3"),
-  new Audio("mp3/phonics1/audioH.mp3"),
-  new Audio("mp3/phonics1/audioI.mp3"),
-  new Audio("mp3/phonics1/audioJ.mp3"),
-  new Audio("mp3/phonics1/audioK.mp3"),
-  new Audio("mp3/phonics1/audioL.mp3"),
-  new Audio("mp3/phonics1/audioM.mp3"),
-  new Audio("mp3/phonics1/audioN.mp3"),
-  new Audio("mp3/phonics1/audioO.mp3"),
-  new Audio("mp3/phonics1/audioP.mp3"),
-  new Audio("mp3/phonics1/audioQ.mp3"),
-  new Audio("mp3/phonics1/audioR.mp3"),
-  new Audio("mp3/phonics1/audioS.mp3"),
-  new Audio("mp3/phonics1/audioT.mp3"),
-  new Audio("mp3/phonics1/audioU.mp3"),
-  new Audio("mp3/phonics1/audioV.mp3"),
-  new Audio("mp3/phonics1/audioW.mp3"),
-  new Audio("mp3/phonics1/audioX.mp3"),
-  new Audio("mp3/phonics1/audioY.mp3"),
-  new Audio("mp3/phonics1/audioZ.mp3")
+  new Audio("mp3/phonics1-2/audioA.mp3"),
+  new Audio("mp3/phonics1-2/audioB.mp3"),
+  new Audio("mp3/phonics1-2/audioC.mp3"),
+  new Audio("mp3/phonics1-2/audioD.mp3"),
+  new Audio("mp3/phonics1-2/audioE.mp3"),
+  new Audio("mp3/phonics1-2/audioF.mp3"),
+  new Audio("mp3/phonics1-2/audioG.mp3"),
+  new Audio("mp3/phonics1-2/audioH.mp3"),
+  new Audio("mp3/phonics1-2/audioI.mp3"),
+  new Audio("mp3/phonics1-2/audioJ.mp3"),
+  new Audio("mp3/phonics1-2/audioK.mp3"),
+  new Audio("mp3/phonics1-2/audioL.mp3"),
+  new Audio("mp3/phonics1-2/audioM.mp3"),
+  new Audio("mp3/phonics1-2/audioN.mp3"),
+  new Audio("mp3/phonics1-2/audioO.mp3"),
+  new Audio("mp3/phonics1-2/audioP.mp3"),
+  new Audio("mp3/phonics1-2/audioQ.mp3"),
+  new Audio("mp3/phonics1-2/audioR.mp3"),
+  new Audio("mp3/phonics1-2/audioS.mp3"),
+  new Audio("mp3/phonics1-2/audioT.mp3"),
+  new Audio("mp3/phonics1-2/audioU.mp3"),
+  new Audio("mp3/phonics1-2/audioV.mp3"),
+  new Audio("mp3/phonics1-2/audioW.mp3"),
+  new Audio("mp3/phonics1-2/audioX.mp3"),
+  new Audio("mp3/phonics1-2/audioY.mp3"),
+  new Audio("mp3/phonics1-2/audioZ.mp3")
 ]
 const soundCorrect = new Audio("mp3/sound_correct.mp3")
 const soundIncorrect = new Audio("mp3/sound_incorrect.mp3")
